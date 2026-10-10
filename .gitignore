@@ -1,0 +1,57 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# VS Code / Rider
+.vscode/
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+!packages/build/
+project.lock.json
+
+# Test results & coverage
+TestResults/
+[Tt]est[Rr]esult*/
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+
+# Logs
+*.log
+logs/
+
+# Publish output
+PublishScripts/
+*.pubxml
+*.pubxml.user
+*.publishproj
+App_Data/
+
+# Secrets & local config (keep these out of GitHub!)
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.pfx
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
