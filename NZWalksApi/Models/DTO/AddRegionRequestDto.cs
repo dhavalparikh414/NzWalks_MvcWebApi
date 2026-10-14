@@ -1,6 +1,6 @@
 ﻿namespace NZWalksApi.Models.DTO
 {
-    public class AddRegionRequestDto
+    public record AddRegionRequestDto
     {
         public string Name { get; set; } = string.Empty;
 

@@ -1,6 +1,10 @@
 
 using Microsoft.EntityFrameworkCore;
 using NZWalksApi.Data;
+using NZWalksApi.Mappings;
+using NZWalksApi.Repositories;
+using AutoMapper;
+using Scalar.AspNetCore;
 
 namespace NZWalksApi
 {
@@ -18,8 +22,11 @@ namespace NZWalksApi
 
             builder.Services.AddDbContext<NzWalksDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("NZWalks"));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("NzWalksConnectionString"));
             });
+
+            builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>();
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
             var app = builder.Build();
 
@@ -27,6 +34,7 @@ namespace NZWalksApi
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+                app.MapScalarApiReference();
             }
 
             app.UseHttpsRedirection();
